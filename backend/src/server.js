@@ -4,10 +4,7 @@ const routes = require('./routes');
 
 const app = express();
 
-// mongoose.connect('', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// })
+// mongoose key here
 
 // req.query = acessar query params (para filtros)
 // req.params = acessar route params (para edição, delete)
