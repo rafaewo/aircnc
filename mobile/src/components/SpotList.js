@@ -16,8 +16,8 @@ function SpotList({ tech, navigation }) {
         loadSpots();
     }, []);
 
-    function handleNavigate() {
-        NavigationPreloadManager.navigate('Book')
+    function handleNavigate(id) {
+        NavigationPreloadManager.navigate('Book', { id });
     }
 
     return (
@@ -35,7 +35,7 @@ function SpotList({ tech, navigation }) {
                         <Image style={styles.thumbnail} source={{ uri: item.thumbnail_utl }} />
                         <Text style={styles.company}>{item.company}</Text>
                         <Text style={styles.price}>{item.price ? `R$${item.price}/dia` : 'GRATIUTO'}</Text>
-                        <TouchableOpacity onPress={handleNavigate} style={styles.button}>
+                        <TouchableOpacity onPress={() => handleNavigate(item._id)} style={styles.button}>
                             <Text style={styles.buttonText}>Solicitar reserva</Text>
                         </TouchableOpacity>
                     </View>
